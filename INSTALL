@@ -1,0 +1,21 @@
+To build you need to add to your CLASSPATH
+$(base_directory)/test_harness
+and
+$(base_directory)/test_harness/libs/*
+
+e.g.
+
+export TESTHARNESS=/home/richard/code/test_harness
+export CLASSPATH=$CLASSPATH:$TESTHARNESS:$TESTHARNESS/libs/*
+
+build with
+
+ant build
+
+To run with a blank example data it is necessary to do:
+java ccntester.testharness.TestHarness scripts/example.xml
+
+The scripts directory contains an example test topology
+example.xml controls the test harness
+testfile.net contains information about the topology to be connected
+
