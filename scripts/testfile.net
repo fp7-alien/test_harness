@@ -1,0 +1,12 @@
+router1, none, 0, 2000, 1000
+router1a, router1, 0.2, 200, 200
+router1b, router1, 0.2, 200, 200
+router2, router1, 0, 1200, 1000
+router1ab, router1a, 0.2, 200, 200
+router1ba, router1b, 0.2, 200, 200
+router2a, router2, 0.2, 200, 200
+router2b, router2, 0.2, 200, 200
+router2ab, router2a, 0.2, 200, 200
+router2ba, router2b, 0.2, 200, 200
+router2c, router2, 0.2, 200, 200
+router2ca, router2c, 0.2, 200, 200

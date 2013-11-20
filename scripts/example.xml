@@ -1,0 +1,36 @@
+<CacheTester>
+  <DocumentProperties>
+    <NoDocuments>20</NoDocuments>
+
+    <LengthDistribution>
+      <ProbElement>
+	   <Type>LogNormal</Type>
+	   <Weight>1.0</Weight>
+	   <Parameter>7.0</Parameter>
+	   <Parameter>1.5</Parameter>
+      </ProbElement>
+    </LengthDistribution>
+    <PopDistribution>
+      <ProbElement>
+	   <Type>Uniform</Type>
+	   <Weight>1.0</Weight>
+	   <Parameter>1.0</Parameter>
+	   <Parameter>1.0</Parameter>
+      </ProbElement>
+    </PopDistribution>
+  </DocumentProperties>
+  
+  <Network>
+     <FileName>scripts/testfile.net</FileName>
+     <EndTime>100</EndTime>
+     <RateScale>0.0005</RateScale>
+  </Network>
+  
+  <Host>
+        <Name>localhost</Name>
+        <LowPort>8000</LowPort>
+        <HighPort>8100</HighPort>
+  </Host>
+  
+  
+</CacheTester>

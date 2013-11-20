@@ -1,0 +1,58 @@
+<project name="CacheTester" default="usage" basedir=".">
+
+  <!-- Initializations -->
+  <target name="init">    
+    <echo message="------------ Building Cache Tester ----------"/>
+    <echo message=""/>
+    <property name="sources" value="${basedir}"/>
+    <property name="external.jars" value="./libs/rgcprobdistributions.jar:./libs/rgcxmlparse.jar:./libs/rgcmathfunctions.jar" />
+    <property name="api" value="${basedir}/docs"/>    
+    <property name="year" value="2011"/>
+    <property name="jars" value="${basedir}"/>
+    <property name="release" value="0.8.1" />
+  </target>
+
+  <!-- Build -->
+  <target name="build" depends="init">
+    <echo message="------ Compiling application"/>
+    <javac debug="on" srcdir="${sources}" classpath="${external.jars}" includeantruntime="false">
+ 
+    </javac>
+
+  </target>
+
+
+  <!-- JavaDoc -->
+   <target name="javadoc" description="o Create Javadocs for the demo" >
+        <mkdir dir="${basedir}/javadoc/"/>
+        <javadoc 
+            destdir="${basedir}/javadoc/">
+            
+            <fileset dir="${basedir}/" includes="**/*.java" />
+        </javadoc>
+  </target>
+
+  <!-- ALL -->
+  <target name="all" depends="build, javadoc">
+  </target>
+      
+    <target name="clean" description="Delete class files and docs dir.">
+        <delete>
+            <fileset dir="${basedir}" includes="**/*.class"/>
+        </delete>
+        <delete dir="${api}" />
+    </target>
+
+  <!-- Usage -->
+  <target name="usage">
+     <echo message="*** User Space Routing ANT build script ***"/>
+     <echo message="Usage : "/>
+     <echo message="   ant [target]"/>
+     <echo message=""/>     
+     <echo message="   target : "/>     
+     <echo message="            build : Build Application"/>     
+     <echo message="            javadoc  : Build Application + Javadoc"/>     
+     <echo message="            all   : Build Application + Archive + JavaDoc"/>       
+  </target>
+       
+</project>
