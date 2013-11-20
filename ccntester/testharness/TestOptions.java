@@ -108,7 +108,8 @@ public class TestOptions {
         }
 
         try {
-            docsLenDist_= ProbDistribution.parseProbDist(docNode,"LengthDistribution");
+            NodeList ldist= ((Element)docNode).getElementsByTagName("LengthDistribution");
+            docsLenDist_= ProbDistribution.parseProbDist(ldist,"LengthDistribution");
             ReadXMLUtils.removeNode(docNode,"LengthDistribution","DocumentProperties");
         } catch (SAXException e) {
             throw new IOException("LengthDistribution tag failed to parse -- "+e.getMessage());
@@ -123,7 +124,8 @@ public class TestOptions {
         }
 
         try {
-            docsPopDist_= ProbDistribution.parseProbDist(docNode,"PopDistribution");
+            NodeList pdist= ((Element)docNode).getElementsByTagName("PopDistribution");
+            docsPopDist_= ProbDistribution.parseProbDist(pdist,"PopDistribution");
             ReadXMLUtils.removeNode(docNode,"PopDistribution","DocumentProperties");
         } catch (SAXException e) {
             throw new IOException("PopDistribution tag failed to parse -- "+e.getMessage());
