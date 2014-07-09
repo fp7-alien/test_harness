@@ -3,6 +3,10 @@ $(base_directory)/test_harness
 and
 $(base_directory)/test_harness/libs/*
 
+That is edit your bashrc or equivalent to say something like
+
+CLASSPATH=$CLASSPATH:/home/johnsmith/test_harness/libs/*
+
 e.g.
 
 export TESTHARNESS=/home/richard/code/test_harness
